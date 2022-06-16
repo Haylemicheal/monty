@@ -53,6 +53,7 @@ void execute_cmd(stack_t *stack)
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i = 0;

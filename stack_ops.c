@@ -67,9 +67,7 @@ void push(stack_t **stack, unsigned int line_number)
 	pStack = add_stack_end();
 	temp = element->tokened[1];
 	if (pStack == NULL)
-	{
 		print_error(3);
-	}
 
 	if (temp != NULL)
 	{

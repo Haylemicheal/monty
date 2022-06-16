@@ -61,6 +61,7 @@ extern vars_t *element;
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 void print_error(int err_num);
 
