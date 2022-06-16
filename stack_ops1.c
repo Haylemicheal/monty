@@ -32,3 +32,38 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", head->n);
 }
+
+/**
+  * pop - removes the top element of the stack
+  * @stack: ptr to the top of the stack
+  * @line_number: the line number of the command being execute
+  * Return: nothing, void
+  */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *traverse = element->head;
+	stack_t *temp;
+
+	(void) stack;
+	(void) line_number;
+
+	temp = malloc(sizeof(stack_t));
+	if (!temp)
+		print_error(3);
+	if (element->head == NULL)
+		print_error(7);
+	while (traverse->next)
+		traverse = traverse->next;
+
+	if (!traverse->prev)
+	{
+		traverse = NULL;
+	}
+	else
+	{
+		temp = traverse;
+		traverse = traverse->prev;
+		traverse->next = temp->next;
+		free(temp);
+	}
+}
