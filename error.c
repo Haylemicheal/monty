@@ -31,5 +31,9 @@ void print_error(int err_num)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", element->ln);
 	}
+	else if (err_num == 6)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", element->ln);
+	}
 	exit(EXIT_FAILURE);
 }
