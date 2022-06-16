@@ -27,5 +27,9 @@ void print_error(int err_num)
 		val = element->tokened[0];
 		fprintf(stderr, "L%d: unknown instruction %s\n", element->ln, val);
 	}
+	else if (err_num == 5)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", element->ln);
+	}
 	exit(EXIT_FAILURE);
 }
