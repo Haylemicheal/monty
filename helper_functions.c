@@ -2,6 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 
+/**
+ * _strdup - Duplicate a string
+ * @s: String input
+ * Return: String
+ */
 char *_strdup(char *s)
 {
 	size_t len, i;
