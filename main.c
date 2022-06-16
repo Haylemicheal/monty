@@ -56,6 +56,7 @@ void execute_cmd(stack_t *stack)
 		{"nop", nop},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i = 0;

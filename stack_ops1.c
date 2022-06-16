@@ -67,3 +67,29 @@ void pop(stack_t **stack, unsigned int line_number)
 		free(temp);
 	}
 }
+
+/**
+ * swap - swaps the top two elements of the stack
+ * @stack: ptr to the top of the stack
+ * @line_number: the line number of the command being execute
+ * Return: void
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = element->head;
+	int val = 0;
+
+	(void) stack;
+	(void) line_number;
+	if (temp == NULL || temp->next == NULL)
+	{
+		print_error(8);
+	}
+	while (temp->next->next)
+	{
+		temp = temp->next;
+	}
+	val = temp->n;
+	temp->n = temp->next->n;
+	temp->next->n = val;
+}

@@ -39,5 +39,9 @@ void print_error(int err_num)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", element->ln);
 	}
+	else if (err_num == 8)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", element->ln);
+	}
 	exit(EXIT_FAILURE);
 }
