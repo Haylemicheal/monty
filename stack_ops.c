@@ -59,19 +59,49 @@ stack_t *add_stack_end(void)
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *pStack = NULL;
+	char *temp;
+	int i = 0, f = 0, negative = 0;
+
 	(void) line_number;
 	(void) stack;
 	pStack = add_stack_end();
-
+	temp = element->tokened[1];
 	if (pStack == NULL)
 	{
 		print_error(3);
 	}
-	else
+
+	if (temp != NULL)
 	{
-		pStack->n = atoi(element->tokened[1]);
+		if (temp[0] == '-')
+		{
+			i++;
+			f = 1;
+			negative = 1;
+		}
+		while (temp[i] != '\0')
+		{
+			if (isdigit(temp[i]) == 0)
+			{
+				f = 1;
+				break;
+			}
+			i++;
+			f = 0;
+		}
+		if (f == 0)
+		{
+			if (negative == 1)
+				temp = temp + 1;
+			pStack->n = atoi(temp);
+			if (negative == 1)
+				pStack->n *= -1;
+			return;
+		}
 	}
+	print_error(5);
 }
+
 
 /**
  * pall -  prints all the values on the stack, starting from
